@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レムリアンヒーリング 図解</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #1890ff;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #1890ff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1890ff;
+            margin-top: 40px;
+            padding-left: 10px;
+            border-left: 5px solid #1890ff;
+        }
+        .diagram-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .diagram-title {
+            text-align: center;
+            font-size: 1.5em;
+            color: #1890ff;
+            margin-bottom: 20px;
+        }
+        .section-label {
+            background-color: #1890ff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .diagram {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .explanation {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 3px solid #1890ff;
+        }
+        .explanation h3 {
+            margin-top: 0;
+            color: #1890ff;
+        }
+        .concept-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .concept-box {
+            width: 45%;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .concept-box h3 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .arrow-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .arrow {
+            position: relative;
+            width: 200px;
+            height: 40px;
+            background-color: #1890ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .arrow::after {
+            content: "";
+            position: absolute;
+            right: -15px;
+            top: 5px;
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #1890ff;
+        }
+        .goal-box {
+            width: 100%;
+            background-color: #e6f7ff;
+            border: 1px solid #1890ff;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .circuit-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .circuit {
+            width: 45%;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .circuit h3 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .human-figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        .paradigm-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .paradigm {
+            width: 45%;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .paradigm h3 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .transition-arrow {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            color: #fa8c16;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        @media (max-width: 768px) {
+            .concept-box, .circuit, .paradigm {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>レムリアンヒーリング 図解</h1>
+
+    <div class="diagram-container">
+        <div class="diagram-title">1. レムリアンヒーリングの基本概念と目標</div>
+        
+        <div class="concept-flow">
+            <div class="concept-box">
+                <h3>現在の状態</h3>
+                <ul>
+                    <li>自我（エゴ）に縛られている</li>
+                    <li>過去の抑圧/痛み/悲しみを保持</li>
+                    <li>低い波動の穢れが存在</li>
+                </ul>
+            </div>
+            
+            <div class="concept-box">
+                <h3>目指す状態</h3>
+                <ul>
+                    <li>自然体、あるがままでいられる</li>
+                    <li>宇宙/自然と完全に調和</li>
+                    <li>ただ存在するだけで愛と赦しを与える</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="arrow-box">
+            <div class="arrow">レムリアンヒーリング</div>
+        </div>
+        
+        <div class="goal-box">
+            <h3>最終目標</h3>
+            <p>人間性（人格）、能力、経験に無関係に、存在そのものが宇宙、自然、意識、心、肉体、エネルギーとして調和し、唯一無二となる状態</p>
+        </div>
+        
+        <svg class="diagram" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- 背景 -->
+            <rect width="800" height="300" fill="#f8f9fa" />
+            
+            <!-- 現在の状態から目標への変化を示す図 -->
+            <rect x="100" y="80" width="250" height="120" rx="5" ry="5" fill="#ffffff" stroke="#d9d9d9" stroke-width="2" />
+            <text x="225" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">現在の状態</text>
+            <text x="225" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 自我（エゴ）に縛られている</text>
+            <text x="225" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 過去のネガティブな記憶を保持</text>
+            <text x="225" y="180" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 低い波動の穢れが存在</text>
+            
+            <rect x="450" y="80" width="250" height="120" rx="5" ry="5" fill="#ffffff" stroke="#d9d9d9" stroke-width="2" />
+            <text x="575" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">目指す状態</text>
+            <text x="575" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 自然体、あるがままでいられる</text>
+            <text x="575" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 宇宙/自然と完全に調和</text>
+            <text x="575" y="180" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 存在するだけで愛と赦しを与える</text>
+            
+            <!-- 矢印 -->
+            <line x1="350" y1="140" x2="450" y2="140" stroke="#1890ff" stroke-width="3" />
+            <polygon points="440,130 460,140 440,150" fill="#1890ff" />
+            <text x="400" y="120" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1890ff">レムリアンヒーリング</text>
+            
+            <!-- 最終目標 -->
+            <rect x="100" y="220" width="600" height="70" rx="5" ry="5" fill="#e6f7ff" stroke="#1890ff" stroke-width="2" />
+            <text x="400" y="240" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1890ff">最終目標:</text>
+            <text x="400" y="270" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">人間性（人格）、能力、経験に無関係に、存在そのものが宇宙、自然、意識、心、</text>
+            <text x="400" y="290" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">肉体、エネルギーとして調和し、唯一無二となる状態</text>
+        </svg>
+        
+        <div class="explanation">
+            <h3>解説</h3>
+            <p>レムリアンヒーリングは、「自我に縛られた現在の状態」から「自然体で宇宙と調和した状態」へと移行するプロセスです。自然体でありながら調和の方向へと向かうことで、最終的には「ただそこにいるだけで愛と赦しを与える存在」になることを目指します。</p>
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <div class="diagram-title">2. ２つのグラウンディング回路</div>
+        
+        <div class="circuit-container">
+            <div class="circuit">
+                <h3>第一の回路（左足）</h3>
+                <ul>
+                    <li>古典的な浄化の回路</li>
+                    <li>低い波動の穢れに対して同じ波長の強い浄化力で対抗</li>
+                    <li>全てのチャクラが次元移行するまで必須の浄化経路</li>
+                    <li>共感力が強いほど低い波動の汚れが大量流入</li>
+                    <li>スピーディな浄化・グラウンディングが重要</li>
+                </ul>
+            </div>
+            
+            <div class="circuit">
+                <h3>第二の回路（右足）</h3>
+                <ul>
+                    <li>新時代のレムリアン回路</li>
+                    <li>低い波動に共鳴しない・次元移行を促す</li>
+                    <li>愛と赦しを自然に与える</li>
+                    <li>宇宙・地球と調和する方向に体内を再構築</li>
+                    <li>右腰周辺から右足裏への回路を常に開いた状態に保つ</li>
+                </ul>
+            </div>
+        </div>
+        
+        <svg class="diagram" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- 第一の回路 -->
+            <rect x="100" y="80" width="250" height="160" rx="5" ry="5" fill="#ffffff" stroke="#d9d9d9" stroke-width="2" />
+            <text x="225" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">第一の回路（左足）</text>
+            <text x="225" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 古典的な浄化の回路</text>
+            <text x="225" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 低い波動の穢れに対して</text>
+            <text x="225" y="175" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">  同じ波長の強い浄化力で対抗</text>
+            <text x="225" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• スピーディな浄化が重要</text>
+            <text x="225" y="225" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 次元移行までの必須プロセス</text>
+            
+            <!-- 人の形と左足グラウンディングを表現 -->
+            <circle cx="170" cy="295" r="15" fill="#d9d9d9" /> <!-- 頭 -->
+            <line x1="170" y1="310" x2="170" y2="335" stroke="#d9d9d9" stroke-width="8" /> <!-- 胴体 -->
+            <line x1="170" y1="320" x2="150" y2="340" stroke="#d9d9d9" stroke-width="5" /> <!-- 左腕 -->
+            <line x1="170" y1="320" x2="190" y2="340" stroke="#d9d9d9" stroke-width="5" /> <!-- 右腕 -->
+            <line x1="170" y1="335" x2="155" y2="360" stroke="#d9d9d9" stroke-width="5" /> <!-- 右足 -->
+            <line x1="170" y1="335" x2="185" y2="360" stroke="#52c41a" stroke-width="5" /> <!-- 左足(緑) -->
+            <!-- 左足から地面へのエネルギー流れ -->
+            <path d="M185,360 Q190,370 195,380" stroke="#52c41a" stroke-width="3" fill="none" />
+            <path d="M185,360 Q180,370 175,380" stroke="#52c41a" stroke-width="3" fill="none" />
+            <path d="M185,360 Q185,370 185,380" stroke="#52c41a" stroke-width="3" fill="none" />
+            
+            <!-- 第二の回路 -->
+            <rect x="450" y="80" width="250" height="160" rx="5" ry="5" fill="#ffffff" stroke="#d9d9d9" stroke-width="2" />
+            <text x="575" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">第二の回路（右足）</text>
+            <text x="575" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 新時代のレムリアン回路</text>
+            <text x="575" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 低い波動に共鳴しない</text>
+            <text x="575" y="175" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 次元移行を促す</text>
+            <text x="575" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 愛と赦しを自然に与える</text>
+            <text x="575" y="225" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 体内を再構築する</text>
+            
+            <!-- 人の形と右足グラウンディングを表現 -->
+            <circle cx="530" cy="295" r="15" fill="#d9d9d9" /> <!-- 頭 -->
+            <line x1="530" y1="310" x2="530" y2="335" stroke="#d9d9d9" stroke-width="8" /> <!-- 胴体 -->
+            <line x1="530" y1="320" x2="510" y2="340" stroke="#d9d9d9" stroke-width="5" /> <!-- 左腕 -->
+            <line x1="530" y1="320" x2="550" y2="340" stroke="#d9d9d9" stroke-width="5" /> <!-- 右腕 -->
+            <line x1="530" y1="335" x2="515" y2="360" stroke="#1890ff" stroke-width="5" /> <!-- 右足(青) -->
+            <line x1="530" y1="335" x2="545" y2="360" stroke="#d9d9d9" stroke-width="5" /> <!-- 左足 -->
+            <!-- 右足から地面とつながるエネルギー -->
+            <path d="M515,360 Q520,370 525,380" stroke="#1890ff" stroke-width="3" fill="none" />
+            <path d="M515,360 Q510,370 505,380" stroke="#1890ff" stroke-width="3" fill="none" />
+            <path d="M515,360 Q515,370 515,380" stroke="#1890ff" stroke-width="3" fill="none" />
+        </svg>
+        
+        <div class="explanation">
+            <h3>実践のポイント</h3>
+            <ul>
+                <li><strong>両方の回路の使い分け</strong>：当面は第一の回路（左足・古典的浄化）が中心となりますが、段階的に第二の回路（右足・レムリアン）へと移行していきます。</li>
+                <li><strong>第一回路の実践</strong>：低い波動の穢れを左足からグラウンディングし、確実な浄化を継続します。</li>
+                <li><strong>第二回路の実践</strong>：右足に地天のエネルギーを開き、定期的に風天のエネルギーでチャクラをトリートメントします（年4回程度）。</li>
+                <li><strong>環境の整備</strong>：太平洋に面した地域での滞在が有効です（北海道十勝平野、宮城県、千葉県、三重県、徳島県、屋久島など）。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <div class="diagram-title">3. パラダイムシフト - 新しい時代へ</div>
+        
+        <div class="paradigm-container">
+            <div class="paradigm">
+                <h3>これまでのパラダイム</h3>
+                <ul>
+                    <li>穢れ対策に追われる生活</li>
+                    <li>浄化してもキリがない</li>
+                    <li>報復の悪循環</li>
+                    <li>「目には目を」の世界</li>
+                </ul>
+            </div>
+            
+            <div class="paradigm">
+                <h3>レムリアンのパラダイム</h3>
+                <ul>
+                    <li>自然体であるだけで調和</li>
+                    <li>対等・尊重の関係性</li>
+                    <li>ただ存在するだけで愛と赦しを与える</li>
+                    <li>命と命のパーフェクトなネットワークシステム</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="transition-arrow">
+            ↓ 次元移行 ↓
+        </div>
+        
+        <svg class="diagram" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+            <!-- 旧パラダイム -->
+            <rect x="100" y="80" width="250" height="140" rx="5" ry="5" fill="#ffffff" stroke="#d9d9d9" stroke-width="2" />
+            <text x="225" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">これまでのパラダイム</text>
+            <text x="225" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 穢れ対策に追われる生活</text>
+            <text x="225" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 浄化してもキリがない</text>
+            <text x="225" y="180" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 報復の悪循環</text>
+            <text x="225" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">•「目には目を」の世界</text>
+            
+            <!-- 新パラダイム -->
+            <rect x="450" y="80" width="250" height="140" rx="5" ry="5" fill="#ffffff" stroke="#d9d9d9" stroke-width="2" />
+            <text x="575" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">レムリアンのパラダイム</text>
+            <text x="575" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 自然体であるだけで調和</text>
+            <text x="575" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• 対等・尊重の関係性</text>
+            <text x="575" y="180" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">• ただ存在するだけで</text>
+            <text x="575" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666666">  愛と赦しを与える</text>
+            
+            <!-- 矢印 -->
+            <line x1="225" y1="230" x2="400" y2="260" stroke="#fa8c16" stroke-width="2" />
+            <line x1="575" y1="230" x2="400" y2="260" stroke="#fa8c16" stroke-width="2" />
+            <polygon points="390,260 410,260 400,270" fill="#fa8c16" />
+            <text x="400" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#fa8c16">次元移行</text>
+        </svg>
+        
+        <div class="explanation">
+            <h3>プロセスの流れ</h3>
+            <ol>
+                <li><strong>手放すもの</strong>
+                    <ul>
+                        <li>自我（エゴ）</li>
+                        <li>宿命に縛られた目標</li>
+                        <li>体内の過去の抑圧や痛み</li>
+                        <li>ネガティブな体験・記憶</li>
+                    </ul>
+                </li>
+                <li><strong>浄化の過程</strong>
+                    <ul>
+                        <li>必要な浄化のため、ネガティブな要素を引き寄せる</li>
+                        <li>光の技法やハーブ、レメディの活用</li>
+                        <li>生活空間の浄化や断捨離も並行して行う</li>
+                    </ul>
+                </li>
+                <li><strong>調和への移行</strong>
+                    <ul>
+                        <li>地天と風天を念じて体を整える</li>
+                        <li>古いエネルギーから脱皮</li>
+                        <li>新たなレムリアのエネルギーで満たされる</li>
+                    </ul>
+                </li>
+                <li><strong>最終状態</strong>
+                    <ul>
+                        <li>いたわりや尊重を自然に与える存在へ</li>
+                        <li>共存共栄のパワフルなネットワークの一部となる</li>
+                        <li>ただそこにいるだけで愛と赦しを与える存在になる</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <div class="diagram-title">4. まとめ - 実践に向けて</div>
+        
+        <div class="explanation">
+            <h3>最終目標</h3>
+            <p>レムリアンヒーリングは、最終的に「ただいるだけで愛と赦しを与える存在」になることを目指します。これは向こう数千年の地球の未来において最も普遍的な目標とされています。</p>
+            
+            <h3>実践の順序</h3>
+            <ol>
+                <li><strong>第一段階</strong>：左足を使った古典的な浄化・グラウンディングを徹底的に行う</li>
+                <li><strong>第二段階</strong>：右足を使ったレムリアンの回路を徐々に活性化していく</li>
+                <li><strong>第三段階</strong>：自然体であるだけで周囲に愛と赦しを与える存在へと変容していく</li>
+            </ol>
+            
+            <h3>日常の実践ポイント</h3>
+            <ul>
+                <li>左足からの浄化・グラウンディングを日常的に行う</li>
+                <li>右足に地天のエネルギーを開いた状態を保つ</li>
+                <li>定期的に風天のエネルギーでチャクラをトリートメント</li>
+                <li>太平洋に面した地域で過ごす機会を作る</li>
+                <li>光の技法の習得と実践を継続する</li>
+                <li>生活空間の浄化と断捨離も並行して進める</li>
+            </ul>
+        </div>
+        
+        <div class="circle-container">
+            <div class="circle" style="background-color: #52c41a;">
+                第一の回路<br>（左足）<br>浄化
+            </div>
+            <div class="circle" style="background-color: #1890ff;">
+                第二の回路
